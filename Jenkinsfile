@@ -49,6 +49,9 @@ pipeline {
                 echo 'Starting to Integration test microservice'
               
                 script {      
+                              
+                              sleep 20
+                  
                               def response = sh(script: 'curl -X GET http://localhost:6000/demo/hello', returnStdout: true)
                 
                               echo '=========================Response===================' + response 
