@@ -21,6 +21,19 @@ pipeline {
             sh 'mvn package' 
       }
     }
+    
+    
+    stage('Build Docker Image') {
+            steps {
+                echo 'Starting to build docker image'
+
+                script {
+
+                       docker.build("springmicroservice:${env.BUILD_ID}")
+
+                }
+            }
+        }
   
   }
 
