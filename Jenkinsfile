@@ -47,11 +47,17 @@ pipeline {
     stage('Test Docker Image') {
             steps {
                 echo 'Starting to Integration test microservice'
-
-                sh 'curl -X GET http://localhost:6000/demo/hello'
+              
+                script {      
+                              def response = sh(script: 'curl -X GET http://localhost:6000/demo/hello', returnStdout: true)
+                
+                              echo '=========================Response===================' + response 
+                    
+                        }
 
                 }
             }
+    
     
     
         
