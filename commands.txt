@@ -1,0 +1,15 @@
+mvn clean package
+
+sudo docker build -t myservice .
+
+sudo docker run -d -it -p 9000:9000 myservice -network host
+
+sudo docker container prune
+
+
+developer --> checkins the code  --> Jenkins 1. Runs the mvn clean, test, package command 
+
+
+https://github.com/nareshmanthrabuddi?tab=repositories
+
+mvn archetype:generate -DarchetypeGroupId=org.mule.tools -DarchetypeArtifactId=mule-apikit-archetype -DarchetypeVersion=1.2.4 -DarchetypeRepository=http://repository.mulesoft.org/releases -DgroupId=org.mule.tools -DartifactId=APIKit-project -Dpackage=package-name -Dversion=1.0 -B
