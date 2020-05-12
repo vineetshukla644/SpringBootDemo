@@ -5,20 +5,20 @@ pipeline {
   stages {
     stage('Clean Project') {
       steps {
-            bat 'mvn  clean  compile'
+           sh 'mvn  clean  compile'
       }
     }
 
     stage('Test Project') {
       steps {
-            bat 'mvn test'
+            sh 'mvn test'
       }
     }
 
      stage('Package Project') {
      
       steps {
-            bat 'mvn package' 
+            sh 'mvn package' 
       }
     }
   
