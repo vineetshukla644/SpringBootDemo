@@ -29,7 +29,17 @@ pipeline {
 
                 script {
 
-                       docker.build("springmicroservice:${env.BUILD_ID}")
+                       docker.build("springmicroservice")
+
+                }
+            }
+        }
+    
+    stage('Run Docker Image') {
+            steps {
+                echo 'Starting to run docker image'
+
+                sh 'docker run -it -d -p 6000:6000 springmicroservice'
 
                 }
             }
