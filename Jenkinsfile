@@ -3,7 +3,7 @@ pipeline {
   agent any
  
   stages {
-    stage('Clean Project') {
+    stage('Clean Project Now') {
       steps {
            sh 'mvn  clean  compile'
       }
