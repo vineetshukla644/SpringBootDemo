@@ -1,0 +1,19 @@
+pipeline {
+
+  agent any
+
+  stages {
+
+  
+
+    stage('Deploy App') {
+      steps {
+        script {
+          kubernetesDeploy(configs: "app.yaml", kubeconfigId: "ibmk8s-configfile")
+        }
+      }
+    }
+
+  }
+
+}
