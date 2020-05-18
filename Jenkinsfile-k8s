@@ -9,7 +9,7 @@ pipeline {
     stage('Deploy App') {
       steps {
         script {
-          kubernetesDeploy(configs: "app.yaml", kubeconfigId: "ibmk8s")
+          kubernetesDeploy(configs: "app.yml", kubeconfigId: "ibmk8s")
         }
       }
     }
